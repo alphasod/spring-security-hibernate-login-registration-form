@@ -9,6 +9,7 @@
 
 <form:form modelAttribute="user" method="post">
  <h3>${error}</h3>
+ <h3>${msg}</h3>
  <table>
   <tr>
    <td>User:</td>

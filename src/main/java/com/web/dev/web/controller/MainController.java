@@ -62,16 +62,23 @@ public class MainController {
 		return model;
 	}
 	@RequestMapping(value = "/create-user", method = RequestMethod.POST)
-	public ModelAndView createUserPost(@ModelAttribute("user") User user) {
+	public ModelAndView createUserPost(@RequestParam(value = "password") String password, @ModelAttribute("user") User user) {
 		ModelAndView model = new ModelAndView();
-		try {
-			service.createUser(user);
-			model.setViewName("login");
+
+		if(password.length()>5){
+			try {
+				service.createUser(user);
+				model.setViewName("login");
+			}
+			catch(ConstraintViolationException ex){
+				model.addObject("error", "This name is already used ");
+				model.setViewName("create-user");
+			}
 		}
-		catch(ConstraintViolationException ex){
-			model.addObject("error", "This name is already used ");
-			model.setViewName("create-user");
+		else{
+			model.addObject("msg", "Password is not complicated, enter a minimum of 6 characters ");
 		}
+
 		return model;
 	}
 
