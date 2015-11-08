@@ -1,0 +1,5 @@
+In this application, we used the following technologies:Spring,Hibernate
+For convenience of testing was used built-in database (tests were also conducted with the database (h2, MySql);
+User password protected with the aid of the encryption;
+The filter incoming requests was used (Spring Security) that when you try to go to a protected resource redirects the request to the login form;
+Not registered users register and can then log in and go to the user and to see the greeting HelloWorld;

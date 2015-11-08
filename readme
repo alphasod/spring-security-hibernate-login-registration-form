@@ -1,0 +1,3 @@
+To deploy the application:
+1. Simply import into your development environment (intellij) and deploy using any container
+2. Using the command line to go to the folder with the application for deployment to execute the command -mvn jetty:run (as a container to be installed jetty)
