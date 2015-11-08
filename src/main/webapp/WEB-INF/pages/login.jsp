@@ -43,7 +43,7 @@
 	<form action="create-user" method='GET'>
 		<table>
 
-			<input type="submit" name='Registration' value="create-user">
+			<input type="submit" name='create-user' value="Registration">
 
 		</table>
 	</form>
