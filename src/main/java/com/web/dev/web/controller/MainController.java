@@ -78,7 +78,6 @@ public class MainController {
 	private String getErrorMessage(HttpServletRequest request, String key) {
 
 		Exception exception = (Exception) request.getSession().getAttribute(key);
-
 		String error = "";
 		if (exception instanceof BadCredentialsException) {
 			error = "Invalid username and password!";
