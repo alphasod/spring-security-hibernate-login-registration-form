@@ -62,7 +62,7 @@ public class MainController {
 		return model;
 	}
 	@RequestMapping(value = "/create-user", method = RequestMethod.POST)
-	public ModelAndView createUserPost(@RequestParam(value = "password") String password, @ModelAttribute("user") User user) {
+	public ModelAndView createUserPost(@ModelAttribute("user") User user) {
 		ModelAndView model = new ModelAndView();
 			try {
 				service.createUser(user);

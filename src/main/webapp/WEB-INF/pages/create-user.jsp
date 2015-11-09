@@ -12,7 +12,7 @@
  <table>
   <tr>
    <td>User:</td>
-   <td><input title="Enter your username" type="text" required pattern="\w+" name="username"></td>
+   <td><input title="Enter your username" type="text" required pattern="\w+" name="username" ></td>
   </tr>
   <tr>
    <td>Password:</td>
