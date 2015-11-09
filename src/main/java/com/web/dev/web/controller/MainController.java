@@ -27,22 +27,18 @@ public class MainController {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("welcome");
 		return model;
-
 	}
 
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public ModelAndView adminPage() {
-
 		ModelAndView model = new ModelAndView();
 		model.setViewName("users");
 		return model;
-
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
-
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
 			model.addObject("error", getErrorMessage(request, "SPRING_SECURITY_LAST_EXCEPTION"));
@@ -52,15 +48,16 @@ public class MainController {
 			model.addObject("msg", "You've been logged out successfully.");
 		}
 		model.setViewName("login");
-
 		return model;
 	}
+
 	@RequestMapping(value = "/create-user",method = RequestMethod.GET)
 	public ModelAndView createUserGet() {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("create-user");
 		return model;
 	}
+
 	@RequestMapping(value = "/create-user", method = RequestMethod.POST)
 	public ModelAndView createUserPost(@ModelAttribute("user") User user) {
 		ModelAndView model = new ModelAndView();
@@ -86,7 +83,6 @@ public class MainController {
 		} else {
 			error = "Invalid username and password!";
 		}
-
 		return error;
 	}
 }
