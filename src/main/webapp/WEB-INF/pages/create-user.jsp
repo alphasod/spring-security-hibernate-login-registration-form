@@ -8,11 +8,12 @@
 <h2>Registration form</h2>
 
 <form:form modelAttribute="user" method="post" >
- <h4>${error}</h4>
  <table>
   <tr>
    <td>User:</td>
-   <td><input title="Enter your username" type="text" required pattern="\w+" name="username" ></td>
+   <td><input title="Enter your username" type="text" required pattern="\w+" name="username" ><c:if test="${not empty error}">
+    <class="error">${error}
+   </c:if> </td>
   </tr>
   <tr>
    <td>Password:</td>
